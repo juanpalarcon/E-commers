@@ -1,0 +1,19 @@
+rails new ecommers --database=postgresql
+
+para crear la base de datos 
+rails db:create
+
+modelo categoria
+rails g scaffold Category name:string
+
+modelo Producto
+rails g scaffold Product name:string description:text stock:integer price:decimal skul:string
+
+creacion tabla intermedia 
+rails g migration CreateJoinTabloProductCategory  product category
+
+corremos migracion 
+rails db:migrate
+
+
+
