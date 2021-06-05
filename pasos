@@ -7,13 +7,22 @@ modelo categoria
 rails g scaffold Category name:string
 
 modelo Producto
-rails g scaffold Product name:string description:text stock:integer price:decimal skul:string
+rails g scaffold Product name:string description:text stock:integer price:decimal sku:string
 
 creacion tabla intermedia 
 rails g migration CreateJoinTabloProductCategory  product category
 
 corremos migracion 
 rails db:migrate
+
+relacionamos los modelos 
+has_and_belongs_to_many :products
+has_and_belongs_to_many :categories 
+* importante siempre revisar  las asosiaciones en la consola
+Product.new.categories
+Category.new.products
+
+
 
 
 

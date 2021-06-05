@@ -17,7 +17,7 @@ class ProductsTest < ApplicationSystemTestCase
     fill_in "Description", with: @product.description
     fill_in "Name", with: @product.name
     fill_in "Price", with: @product.price
-    fill_in "Skul", with: @product.skul
+    fill_in "sku", with: @product.sku
     fill_in "Stock", with: @product.stock
     click_on "Create Product"
 
@@ -32,7 +32,7 @@ class ProductsTest < ApplicationSystemTestCase
     fill_in "Description", with: @product.description
     fill_in "Name", with: @product.name
     fill_in "Price", with: @product.price
-    fill_in "Skul", with: @product.skul
+    fill_in "sku", with: @product.sku
     fill_in "Stock", with: @product.stock
     click_on "Update Product"
 

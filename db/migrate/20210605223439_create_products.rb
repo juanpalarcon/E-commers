@@ -5,7 +5,7 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.text :description
       t.integer :stock
       t.decimal :price
-      t.string :skul
+      t.string :sku
 
       t.timestamps
     end

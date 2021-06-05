@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2021_06_05_223741) do
     t.text "description"
     t.integer "stock"
     t.decimal "price"
-    t.string "skul"
+    t.string "sku"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
