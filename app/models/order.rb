@@ -3,6 +3,8 @@ class Order < ApplicationRecord
   ORDER_PREFIX = 'PO'
   RANDOM_SIZE = 9
   belongs_to :user
+  has_many :order_items
+  has_many :products, through: :order_items
   before_create -> {generate_number(RANDOM_SIZE)}
 
   validates :number, uniqueness: true
