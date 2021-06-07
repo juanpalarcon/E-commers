@@ -2,12 +2,12 @@
 
 one:
   user: one
-  numbre: MyString
+  number: MyString
   total: 9.99
   state: MyString
 
 two:
   user: two
-  numbre: MyString
+  number: MyString
   total: 9.99
   state: MyString
