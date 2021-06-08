@@ -16,4 +16,6 @@ class OrderTest < ActiveSupport::TestCase
     assert_not dup_order.valid?
 
   end
+
+  test ''
 end
