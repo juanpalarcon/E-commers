@@ -17,5 +17,26 @@ class OrderTest < ActiveSupport::TestCase
 
   end
 
-  test ''
+  test 'adds products as order_items' do
+    user = users(:one)
+    order = Order.create(user_id: user.id)
+    product = products(:one)
+    quantity = 1
+    order.add_product(product.id, quantity)
+
+    assert_equal(order.order_items.count, 1)
+  end
+
+  test 'products with zero stock cannot be added to cart' do
+    user = users(:one)
+    order = Order.create(user_id: user.id)
+    product = products(:two)
+    quantity = 1
+    order.add_product(product.id, quantity)
+
+    assert_equal(order.order_items.count, 1)
+  end
+
+
+
 end
