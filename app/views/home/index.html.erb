@@ -14,12 +14,13 @@
                 <div>
             <%=  number_to_currency product.price %>
                 </div>
-                <div class="row float-right">
-                <div class="col-md-12">
-                <button class="btn btn-primary btn-sm">Add to cart</button>
-                </div>
-                  </div>
-                  </div>
+                <%=  number_to_currency product.price %>
+                <%= form_for :cart, url: cart_path, method: :put do |f| %>
+                  <%= f.hidden_fielf :product_id, value: 1 product_id %>
+                  <%= f.hidden_fielf :quantity, value: 1  %>
+                  <%= f.submit "Add To Cart", class: 'btn btn primary btn -sm fluid' %>
+                  <% end %>
+                  
                 </div>
             </div>
           <% end %>
