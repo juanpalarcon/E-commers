@@ -30,4 +30,12 @@ class Order < ApplicationRecord
       order_items.create(product_id: product.id, quantity: quantity, price: product.price)
     end
   end
+  
+  def compute_total
+    sum = 0
+    order_items.each do |item|
+      sum += item.price
+    end
+    update_attribute(:total, sum)
+  end
 end

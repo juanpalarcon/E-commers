@@ -7,7 +7,12 @@ Rails.application.routes.draw do
     resources :categories
   end
 
-  resource :cart, only: [:show, :update]
+  resource :cart, only: [:show, :update] do
+    member do 
+      post :pay_with_paypal
+      get :process_paypal_payment
+    end
+  end
 
   root to: "home#index"
 
